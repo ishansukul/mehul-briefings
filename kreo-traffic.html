@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kreo D2C Traffic & Conversion — 6 Months</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0c0a1d; color: #f8fafc; margin: 0; padding: 24px; }
+    .card { background: #161233; border-radius: 16px; padding: 24px; max-width: 920px; margin: 0 auto; border: 1px solid #2d225a; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+    h1 { color: #c084fc; margin-top: 0; font-size: 26px; }
+    table { width: 100%; border-collapse: collapse; margin-block: 20px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #2d225a; }
+    th { background: #0c0a1d; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Kreo D2C Traffic & Conversion Dashboard (Last 6 Months)</h1>
+    <p style="color: #94a3b8;">April 2026 – September 2026 actuals for Mehul's review.</p>
+
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-block: 20px;">
+      <div style="background:#0c0a1d; padding:16px; border-radius:12px; border:1px solid #2d225a;">
+        <div style="color:#94a3b8; font-size:12px;">Total 6-Month Traffic</div>
+        <div style="font-size:24px; font-weight:800; color:#c084fc; margin-top:4px;">1,708,388</div>
+      </div>
+      <div style="background:#0c0a1d; padding:16px; border-radius:12px; border:1px solid #2d225a;">
+        <div style="color:#94a3b8; font-size:12px;">6-Month Net Revenue</div>
+        <div style="font-size:24px; font-weight:800; color:#4ade80; margin-top:4px;">₹3.63 Crore</div>
+      </div>
+      <div style="background:#0c0a1d; padding:16px; border-radius:12px; border:1px solid #2d225a;">
+        <div style="color:#94a3b8; font-size:12px;">Average Monthly Sessions</div>
+        <div style="font-size:24px; font-weight:800; color:#38bdf8; margin-top:4px;">~284,700</div>
+      </div>
+    </div>
+
+    <div>
+      <canvas id="trafficChart" height="120"></canvas>
+    </div>
+
+    <div style="margin-top: 24px; padding: 16px; background: #0c0a1d; border-radius: 12px; border-left: 4px solid #c084fc;">
+      <h3 style="margin-top:0; color:#c084fc;">Discussion Points for Mehul:</h3>
+      <p>1. <b>Conversion Rate Softness in Sept:</b> Dropped to 3.93% (vs ~5.0% in summer). How would you optimize the bottom-of-funnel mobile experience?<br>
+         2. <b>Traffic Scale:</b> Stable around ~260k monthly visits. Ideas on unlocking 400k+ sustained non-sale traffic?</p>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('trafficChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Apr 2026', 'May 2026', 'Jun 2026', 'Jul 2026 (Sale)', 'Aug 2026', 'Sep 2026'],
+        datasets: [
+          {
+            type: 'bar',
+            label: 'Shopify Sessions',
+            data: [248838, 247008, 283630, 405732, 263482, 259698],
+            backgroundColor: '#8b5cf6',
+            yAxisID: 'y'
+          },
+          {
+            type: 'line',
+            label: 'Conversion Rate / ATC %',
+            data: [5.14, 4.53, 4.74, 5.03, 4.93, 3.93],
+            borderColor: '#4ade80',
+            borderWidth: 3,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: { grid: { color: '#2d225a' } },
+          y: { position: 'left', grid: { color: '#2d225a' }, title: { display: true, text: 'Sessions' } },
+          y1: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'CVR %' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMW M350 xDrive vs M340i — Bangalore On-Road Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
+    .card { background: #1e293b; border-radius: 16px; padding: 24px; max-width: 900px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #334155; }
+    h1 { color: #38bdf8; margin-top: 0; font-size: 26px; }
+    .badge { background: #0369a1; color: #e0f2fe; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; margin-block: 20px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #334155; }
+    th { background: #0f172a; color: #94a3b8; }
+    .highlight { color: #38bdf8; font-weight: 700; }
+    .green { color: #4ade80; font-weight: 700; }
+    .red { color: #f87171; font-weight: 700; }
+    .slider-box { background: #0f172a; padding: 16px; border-radius: 12px; margin-block: 20px; border: 1px solid #334155; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h1>BMW M350 xDrive vs M340i</h1>
+      <span class="badge">Bangalore On-Road</span>
+    </div>
+    <p style="color: #94a3b8;">Detailed comparison for Mehul — Evaluating the new 443hp G50 M350 against the legendary M340i.</p>
+
+    <table>
+      <tr>
+        <th>Metric / Cost Component</th>
+        <th>BMW M340i (Current CKD)</th>
+        <th>BMW M350 (Est. CKD Local)</th>
+        <th>BMW M350 (Est. CBU Import)</th>
+      </tr>
+      <tr>
+        <td><b>Engine & Output</b></td>
+        <td>3.0L B58 (374 hp / 500 Nm)</td>
+        <td class="green">3.0L B58 + 48V (443 hp / 580 Nm)</td>
+        <td class="green">3.0L B58 + 48V (443 hp / 580 Nm)</td>
+      </tr>
+      <tr>
+        <td><b>0–100 km/h</b></td>
+        <td>4.4 seconds</td>
+        <td class="green">~4.1 seconds (w/ Drift Mode)</td>
+        <td class="green">~4.1 seconds (w/ Drift Mode)</td>
+      </tr>
+      <tr>
+        <td><b>Ex-Showroom</b></td>
+        <td>₹74.90 Lakhs</td>
+        <td>₹84.90 Lakhs</td>
+        <td class="red">₹1,28.00 Lakhs</td>
+      </tr>
+      <tr>
+        <td><b>Karnataka Road Tax (~20%)</b></td>
+        <td>₹15.20 Lakhs</td>
+        <td>₹17.15 Lakhs</td>
+        <td class="red">₹25.85 Lakhs</td>
+      </tr>
+      <tr>
+        <td><b>Insurance + TCS (1%) + Reg</b></td>
+        <td>₹4.05 Lakhs</td>
+        <td>₹4.60 Lakhs</td>
+        <td>₹6.75 Lakhs</td>
+      </tr>
+      <tr style="background:#1e3a5f;">
+        <td><b>TOTAL BANGALORE ON-ROAD</b></td>
+        <td class="green">~₹94.15L (Dealer Q: ~₹98L)</td>
+        <td class="highlight">~₹1.06 Cr – ₹1.10 Cr</td>
+        <td class="red">~₹1.60 Cr – ₹1.68 Cr</td>
+      </tr>
+    </table>
+
+    <div style="margin-top: 24px;">
+      <canvas id="costChart" height="120"></canvas>
+    </div>
+
+    <div style="margin-top: 24px; padding: 16px; background: #0f172a; border-radius: 12px; border-left: 4px solid #38bdf8;">
+      <h3 style="margin-top:0; color:#38bdf8;">Executive Takeaway:</h3>
+      <p style="margin:0; line-height:1.5;">If BMW India assembles the M350 at Chennai (CKD), it commands a modest ₹10L–₹12L premium over the M340i, crossing into ₹1.08 Cr on-road. If imported as a CBU, taxes propel it to ₹1.65 Cr, where it directly collides with the M2 and M4. <b>M340i at ₹98L on-road remains the benchmark value proposition.</b></p>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('costChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['M340i (Current CKD)', 'M350 (Est. CKD Local)', 'M350 (Est. CBU Import)'],
+        datasets: [
+          { label: 'Ex-Showroom', data: [74.9, 84.9, 128.0], backgroundColor: '#0284c7' },
+          { label: 'Karnataka Road Tax', data: [15.2, 17.15, 25.85], backgroundColor: '#e11d48' },
+          { label: 'Insurance & Reg', data: [4.05, 4.6, 6.75], backgroundColor: '#eab308' }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: { stacked: true, grid: { color: '#334155' } },
+          y: { stacked: true, grid: { color: '#334155' }, title: { display: true, text: '₹ Lakhs' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vape Industry Global Analysis & Investment Playbook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #09090b; color: #f4f4f5; margin: 0; padding: 24px; }
+    .card { background: #18181b; border-radius: 16px; padding: 24px; max-width: 900px; margin: 0 auto; border: 1px solid #27272a; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+    h1 { color: #a855f7; margin-top: 0; font-size: 26px; }
+    table { width: 100%; border-collapse: collapse; margin-block: 20px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #27272a; }
+    th { background: #09090b; color: #a1a1aa; }
+    .tag { padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+    .tag-blue { background: #1e3a8a; color: #93c5fd; }
+    .tag-green { background: #064e3b; color: #6ee7b7; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Global Vape & Smoke-Free Nicotine Industry</h1>
+    <p style="color: #a1a1aa;">Growth dynamics, regulatory minefields, and public equity plays for Mehul.</p>
+
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-block: 20px;">
+      <div style="background:#09090b; padding:16px; border-radius:12px; border:1px solid #27272a;">
+        <div style="color:#a1a1aa; font-size:12px;">Global Market Size (2026)</div>
+        <div style="font-size:24px; font-weight:800; color:#a855f7; margin-top:4px;">$32.0 Billion</div>
+      </div>
+      <div style="background:#09090b; padding:16px; border-radius:12px; border:1px solid #27272a;">
+        <div style="color:#a1a1aa; font-size:12px;">Projected CAGR (to 2030)</div>
+        <div style="font-size:24px; font-weight:800; color:#34d399; margin-top:4px;">13.4% p.a.</div>
+      </div>
+      <div style="background:#09090b; padding:16px; border-radius:12px; border:1px solid #27272a;">
+        <div style="color:#a1a1aa; font-size:12px;">India Legal Status</div>
+        <div style="font-size:24px; font-weight:800; color:#f87171; margin-top:4px;">100% Banned</div>
+      </div>
+    </div>
+
+    <h3 style="color:#a855f7;">Top Public Equity Investment Plays:</h3>
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>Flagship Brands</th>
+        <th>Moat / Thesis</th>
+        <th>Valuation & Yield</th>
+      </tr>
+      <tr>
+        <td><b>Philip Morris (NYSE: PM)</b></td>
+        <td>IQOS (Heated) & ZYN (Pouches)</td>
+        <td>Unchallenged global titan. Smoke-free products represent >38% of total net revenue.</td>
+        <td><span class="tag tag-green">P/E ~19x | ~4.3% Div</span></td>
+      </tr>
+      <tr>
+        <td><b>British American Tobacco (NYSE: BTI)</b></td>
+        <td>Vuse (Vape) & Velo (Pouches)</td>
+        <td>Owner of Vuse (#1 global closed-pod vape). Massive free cash flow dividend play.</td>
+        <td><span class="tag tag-blue">P/E ~7x | ~8.8% Div</span></td>
+      </tr>
+      <tr>
+        <td><b>Smoore Int. (HKG: 6969)</b></td>
+        <td>FEELM Ceramic Technology</td>
+        <td>Picks-and-shovels OEM manufacturer for leading global brands. High patent barrier.</td>
+        <td><span class="tag tag-blue">P/E ~16x | Tech OEM</span></td>
+      </tr>
+    </table>
+
+    <div style="margin-top:20px;">
+      <canvas id="marketChart" height="120"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2022', '2023', '2024', '2025', '2026 (Est)', '2028 (Proj)', '2030 (Proj)'],
+        datasets: [{
+          label: 'Global E-Cigarette & Smoke-Free Market ($B)',
+          data: [19.2, 22.4, 25.8, 28.5, 32.0, 42.5, 55.4],
+          borderColor: '#a855f7',
+          backgroundColor: 'rgba(168, 85, 247, 0.1)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: { grid: { color: '#27272a' } },
+          y: { grid: { color: '#27272a' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
